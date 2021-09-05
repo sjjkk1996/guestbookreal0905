@@ -45,7 +45,7 @@ public class GuestbookServiceImpl implements GuestbookService{
         //화면에 페이지 처리와 필요한 값들을 생성
         Pageable pageable = dto.getPageable(Sort.by("gno").descending());
 
-        BooleanBuilder booleanBuilder = getSearch(PageRequestDTO.builder().build());
+        BooleanBuilder booleanBuilder = getSearch(dto);
 //        이줄 맞는지 모르겠음 ********************************************************************
 
         //JPA처리 결과인 Page<Entity>객체 생성

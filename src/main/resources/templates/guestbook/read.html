@@ -36,11 +36,11 @@
         <div style="margin-bottom: 20px;"></div>
         <a th:href="@{/guestbook/modify(gno=${dto.gno},page=${requestDTO.page},
         type=${requestDTO.type}, keyword =${requestDTO.keyword})}">
-            <button class="btn btn-primary">수정하기</button>
+            <button type="button" class="btn btn-primary">수정하기</button>
         </a>
         <a th:href="@{/guestbook/list(page=${requestDTO.page},
         type=${requestDTO.type}, keyword =${requestDTO.keyword})}">
-            <button class="btn btn-info">목록보기</button>
+            <button type="button" class="btn btn-info">목록보기</button>
         </a>
     </th:block>
 </th:block>
