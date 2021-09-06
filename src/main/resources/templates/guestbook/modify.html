@@ -48,6 +48,18 @@
         <script th:inline="javascript">
             var actionForm = $("form");
             $(".removeBtn").click(function(){
+            var pageInfo = $("input[name='page']");
+                var page = $("input[name='page']");
+                var type = $("input[name='type']");
+                var keyword = $("input[name='keyword']");
+
+                actionForm.empty();
+
+                actionForm.append(page);
+                actionForm.append(type);
+                actionForm.append(keyword);
+
+                actionForm.append(pageInfo);
                 actionForm.attr("action", "/guestbook/remove")
                 .attr("method","post");
                 actionForm.submit();

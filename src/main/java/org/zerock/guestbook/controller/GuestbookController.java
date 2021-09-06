@@ -70,11 +70,14 @@ public class GuestbookController {
 
   //래퍼클래스인 경우
   @PostMapping("/remove")
-  public String remove(Long gno, RedirectAttributes redirectAttributes){
+  public String remove(Long gno, RedirectAttributes redirectAttributes, PageRequestDTO pageRequestDTO){
     service.remove(gno);
     redirectAttributes.addFlashAttribute("msg", gno);
     redirectAttributes.addFlashAttribute("noti", "삭제");
     //addFlashAttribute는 일회성 한번보여주고 사라짐
+    redirectAttributes.addAttribute("page", pageRequestDTO.getPage());
+    redirectAttributes.addAttribute("type", pageRequestDTO.getType());
+    redirectAttributes.addAttribute("keyword", pageRequestDTO.getKeyword());
     return "redirect:/guestbook/list";
     //redirect 주소
   }
